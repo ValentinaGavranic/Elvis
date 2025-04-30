@@ -174,7 +174,7 @@ body {
 
 .icon {
   font-size: 24px;
-  color: #d32f2f;
+  color: #ffc107;
 }
 
 .text h3 {
@@ -194,9 +194,55 @@ body {
   background-color: #fffaf0;
 }
 
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
 .about-content {
-  max-width: 900px;
-  margin: auto;
+  flex: 1 1 500px;
+}
+
+.heading-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    padding: 0 10px;
+  }
+
+  .heading-section h2 {
+    font-size: 1.6rem;
+  }
 }
 
 .heading-section h2 {
@@ -208,12 +254,6 @@ body {
 .flaticon-pizza {
   color: #d32f2f;
   font-style: normal;
-}
-
-.about-text p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #555;
 }
 
 .site-footer {
@@ -306,6 +346,7 @@ body {
 .menu-header h2 {
   font-size: 2.2rem;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 .menu-decor span {
@@ -383,9 +424,12 @@ body {
   position: relative;
   background-image: url('images/1.png');
   background-repeat: no-repeat;
-  background-size: 100% auto; /* Width = 100%, height auto */
+  background-size: 100% auto;
   background-position: center top;
-  padding: 0; /* No forced padding */
+  padding: 0;
+  height: auto !important;
+  min-height: unset !important;
+  width: 100%;
 }
 
 .overlay {
@@ -401,20 +445,16 @@ body {
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px; /* Your actual spacing */
+  padding: 40px 20px;
   position: relative;
   z-index: 2;
-}
-
-.hero-section {
-  height: auto !important;
-  min-height: unset !important;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 20px;
 }
 
 .hero-text {
@@ -425,6 +465,7 @@ body {
   font-size: 3rem;
   font-weight: bold;
   color: #ffd700;
+  margin-bottom: 20px;
 }
 
 .pizza-bullets {
@@ -475,16 +516,46 @@ body {
   color: #000;
 }
 
+/* ✅ MOBILE OPTIMIZATION */
 @media (max-width: 768px) {
+  .hero-container {
+    padding: 30px 16px;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
   .welcome-heading {
     font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .pizza-bullets li {
+    padding-left: 32px;
+  }
+
+  .pizza-bullets li::before {
+    font-size: 1.2rem;
   }
 
   .pizza-bullets h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .btn-hero {
     padding: 10px 20px;
+    font-size: 1rem;
   }
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon/icomoon.woff') format('woff'),
+       url('../fonts/icomoon/icomoon.ttf') format('truetype');
 }
