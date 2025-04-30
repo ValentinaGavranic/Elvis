@@ -145,25 +145,42 @@ body {
 .intro-section {
   background-color: #000000;
   padding: 40px 20px;
+  overflow-x: auto; /* allow horizontal scroll on smaller devices */
 }
 
 .intro-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   max-width: 1200px;
   margin: auto;
-  gap: 20px;
 }
 
 .intro-info {
   display: flex;
-  flex: 2;
-  flex-wrap: wrap;
   gap: 30px;
-  justify-content: space-between;
+  flex-wrap: nowrap; /* ⛔ prevent wrapping */
+  overflow-x: auto;  /* ✅ allow scrolling if needed */
 }
+
+.info-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  min-width: 250px; /* ✅ ensures blocks fit side-by-side */
+  flex-shrink: 0;
+}
+
+.icon span {
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+.text h3, .text p {
+  margin: 0;
+  color: white;
+}
+
 
 .info-block {
   display: flex;
