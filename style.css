@@ -54,7 +54,7 @@ body {
 }
 
 .navbar {
-  background-color: #1e1e1e;
+  background-color: #000;
   color: white;
   padding: 15px 20px;
   position: sticky;
@@ -527,6 +527,7 @@ body {
 @media (max-width: 768px) {
   .hero-container {
     padding: 30px 16px;
+    background-color: #000;
   }
 
   .hero-content {
