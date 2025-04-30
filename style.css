@@ -381,10 +381,11 @@ body {
 
 .hero-section {
   position: relative;
-  background-size: cover;
-  background-position: center;
-  padding: 80px 20px;
-  color: white;
+  background-image: url('images/1.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto; /* Width = 100%, height auto */
+  background-position: center top;
+  padding: 0; /* No forced padding */
 }
 
 .overlay {
@@ -393,60 +394,69 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.6);
   z-index: 1;
 }
 
 .hero-container {
-  position: relative;
-  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 40px 20px; /* Your actual spacing */
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section {
+  height: auto !important;
+  min-height: unset !important;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .hero-content {
-    flex-direction: row;
-  }
+  align-items: flex-start;
 }
 
 .hero-text {
-  flex: 1;
-  text-align: center;
+  max-width: 600px;
 }
 
-.hero-text .subheading {
-  font-size: 1.2rem;
+.welcome-heading {
+  font-size: 3rem;
+  font-weight: bold;
   color: #ffd700;
 }
 
-.hero-text h2 {
-  font-size: 2.5rem;
-  margin: 10px 0;
+.pizza-bullets {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
 }
 
-.hero-text p {
-  margin: 10px 0 20px;
+.pizza-bullets li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 15px;
+}
+
+.pizza-bullets li::before {
+  content: "🍕";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5rem;
+}
+
+.pizza-bullets h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.hero-subtext {
+  margin: 20px 0;
   font-size: 1.1rem;
-}
-
-.hero-image {
-  flex: 1;
-  text-align: center;
-}
-
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+  color: #fff;
 }
 
 .btn-hero {
@@ -455,12 +465,26 @@ body {
   background-color: transparent;
   border: 2px solid #fff;
   color: #fff;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
   transition: 0.3s;
 }
 
 .btn-hero:hover {
   background-color: #fff;
   color: #000;
+}
+
+@media (max-width: 768px) {
+  .welcome-heading {
+    font-size: 2rem;
+  }
+
+  .pizza-bullets h2 {
+    font-size: 1.4rem;
+  }
+
+  .btn-hero {
+    padding: 10px 20px;
+  }
 }
