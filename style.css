@@ -428,25 +428,16 @@ body {
 }
 
 .hero-section {
-  position: relative;
   background-image: url('images/1.png');
-  background-size: cover;         /* makes sure image covers area */
-  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;             /* Fill the section while preserving ratio */
+  background-position: center center; /* Center on all screens */
   position: relative;
-  padding: 100px 20px;            /* gives height for mobile */
   width: 100%;
-  box-sizing: border-box;
-}
-
-.hero-section {
-  height: auto !important;  /* ✅ allow content to define height */
-}
-
-@media (max-width: 768px) {
-  .hero-section {
-    background-size: contain; /* or auto 100% for width */
-    background-repeat: no-repeat;
-  }
+  min-height: 100vh;                  /* Ensure it fills screen on laptops */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay {
@@ -460,11 +451,12 @@ body {
 }
 
 .hero-container {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  position: relative;
-  z-index: 2;
+  box-sizing: border-box;
 }
 
 .hero-content {
@@ -475,6 +467,7 @@ body {
 }
 
 .hero-text {
+  color: white;
   max-width: 600px;
 }
 
@@ -482,19 +475,18 @@ body {
   font-size: 3rem;
   font-weight: bold;
   color: #ffd700;
-  margin-bottom: 20px;
 }
 
 .pizza-bullets {
   list-style: none;
   padding: 0;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 .pizza-bullets li {
   position: relative;
-  padding-left: 40px;
-  margin-bottom: 15px;
+  padding-left: 32px;
+  margin-bottom: 10px;
 }
 
 .pizza-bullets li::before {
@@ -507,13 +499,7 @@ body {
 
 .pizza-bullets h2 {
   margin: 0;
-  font-size: 1.8rem;
-  color: #fff;
-}
-
-.hero-subtext {
-  margin: 20px 0;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   color: #fff;
 }
 
@@ -524,8 +510,10 @@ body {
   border: 2px solid #fff;
   color: #fff;
   font-weight: bold;
+  font-size: 1rem;
   text-decoration: none;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .btn-hero:hover {
@@ -533,11 +521,13 @@ body {
   color: #000;
 }
 
-/* ✅ MOBILE OPTIMIZATION */
+/* ✅ Mobile optimization */
 @media (max-width: 768px) {
-  .hero-container {
-    padding: 30px 16px;
-    background-color: #000;
+  .hero-section {
+    background-position: center top;
+    background-size: cover;
+    min-height: auto;
+    padding: 60px 20px;
   }
 
   .hero-content {
@@ -545,25 +535,12 @@ body {
     text-align: center;
   }
 
-  .hero-text {
-    max-width: 100%;
-  }
-
   .welcome-heading {
     font-size: 2rem;
-    margin-bottom: 15px;
-  }
-
-  .pizza-bullets li {
-    padding-left: 32px;
-  }
-
-  .pizza-bullets li::before {
-    font-size: 1.2rem;
   }
 
   .pizza-bullets h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .btn-hero {
