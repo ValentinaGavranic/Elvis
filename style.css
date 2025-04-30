@@ -430,13 +430,23 @@ body {
 .hero-section {
   position: relative;
   background-image: url('images/1.png');
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center top;
-  padding: 0;
-  height: auto !important;
-  min-height: unset !important;
+  background-size: cover;         /* makes sure image covers area */
+  background-position: center center;
+  position: relative;
+  padding: 100px 20px;            /* gives height for mobile */
   width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  height: auto !important;  /* ✅ allow content to define height */
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-size: contain; /* or auto 100% for width */
+    background-repeat: no-repeat;
+  }
 }
 
 .overlay {
