@@ -314,6 +314,7 @@ body {
 .gallery-section {
   padding: 40px 20px;
   background-color: #fffaf0;
+  text-align: center;
 }
 
 .gallery-grid {
@@ -347,6 +348,12 @@ body {
   font-size: 2.2rem;
   margin-bottom: 10px;
   color: #fff;
+}
+
+.galerry-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #000;
 }
 
 .menu-decor span {
